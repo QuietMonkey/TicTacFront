@@ -1,8 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+## `rm -rf node_modules package-lock.json && npm i && npm start`
+
+In case of bug when launching the dev server : try the folowing command to reinstall node_modules after reinitializing package-lock.json
 
 ### `npm start`
 
