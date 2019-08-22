@@ -1,33 +1,65 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./assets/cover.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card{
+  width: 25%;
+  height:60%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 24px 40px;
+  background-color: #FFF;
+  border-radius: .3125em;
+  margin: 24px;
 }
 
-.App-link {
-  color: #61dafb;
+.inputSearch {
+  background-color: #F6F7FA;
+  border-radius: .3125em;
+  opacity: .5;
+  padding: 11px 0 11px 35px;
+  line-height: 20px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputSearch:focus{
+  border-color: #01C3A7;
+}
+
+.fromStation{
+  background: url(./assets/from.svg);
+  padding: 11px 0 11px 35px;
+  background-repeat: no-repeat;
+  background-position: 11px center;
+}
+
+.toStation{
+  background: url(./assets/to.svg);
+  padding: 11px 0 11px 35px;
+  background-repeat: no-repeat;
+  background-position: 11px center;
+  margin-bottom: 25px;
+}
+
+.dateBegin{
+  background: url(./assets/begin.svg);
+  padding: 11px 0 11px 35px;
+  background-repeat: no-repeat;
+  background-position: 11px center;
+}
+
+.dateEnd{
+  background: url(./assets/end.svg);
+  padding: 11px 0 11px 35px;
+  background-repeat: no-repeat;
+  background-position: 11px center;
 }
