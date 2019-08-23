@@ -128,6 +128,41 @@ html{
   margin:0px;
 }
 
+.welcomeDiv {
+  display: flex;
+  align-items: center;
+}
+
+.cardTexts{
+  margin: 0px;
+}
+
+.welcomeSpan{
+  width: 40px;
+  height: 40px;
+  min-width: 30px;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+
+.price{
+  background: url(./assets/price.svg);
+  background-repeat: no-repeat;
+  background-position: 2px;
+}
+
+.cardRed{
+  background: url(./assets/payCards.svg);
+  background-repeat: no-repeat;
+  background-position: 2px;
+}
+
+.pay{
+  background: url(./assets/payment.svg);
+  background-repeat: no-repeat;
+  background-position: 2px;
+}
+
 .destinations{
   display: none;
 }

@@ -44,6 +44,7 @@ class App extends Component {
   handleSearch = (e) => {
     axios.get(`https://api.comparatrip.eu/cities/autocomplete/?q=${e.target.value}/7`)
       .then((response) => {
+        console.log(response)
         this.setState({ data: response.data });
       })
       .catch((error) => {
