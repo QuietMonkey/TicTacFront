@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Station = ({name}) => {
+const Station = ({name, handleClick}) => {
     return(
-        <h3 className='station'>{name}</h3>
+        <h3 className='station' onClick={handleClick}>{name}</h3>
     )
 }
 
