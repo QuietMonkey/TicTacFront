@@ -74,7 +74,7 @@ class App extends Component {
           <h2>Quel est votre trajet?</h2>
 
           <input className='inputSearch fromStation' defaultValue='' onFocus={this.handleFocusFrom} onChange={this.handleSearch}></input>
-          <input className='inputSearch toStation' onFocus={this.handleFocusTo}></input>
+          <input className='inputSearch toStation' onFocus={this.handleFocusTo} onChange={this.handleSearch}></input>
           <input className='inputSearch dateBegin'></input>
           <input className='inputSearch dateEnd'></input>
         </div>
