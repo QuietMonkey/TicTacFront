@@ -1,33 +1,195 @@
-.App {
-  text-align: center;
+html{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./assets/cover.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.15;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.content {
+  margin: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navbar{
+  width: 100vw;
+  height: 65px;
+  background: rgba(33,49,77,.8);
+}
+
+.navbar > h2{
+  margin: 0px;
+  position: absolute;
+  top: 19px; left: 30px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.head {
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(48,50,58,.6);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.head > h1{
+  font-size: 40px;
+  margin: 0px;
+}
+
+.head > h2{
+  font-size: 21px;
+}
+
+.cards{
+  display: flex;
+  justify-content: center;
+}
+
+.card{
+  width: 28%;
+  height: 48vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  border-radius: .3125em;
+  margin: 24px;
+  padding: 24px 40px;
+}
+
+.right{
+  background: rgb(33,49,77);
+}
+
+.searchTitle{
+  font-size: 20px;
+  font-weight: 400;
+  color: #323E42;
+  align-self: flex-start;
+}
+
+.inputSearch {
+  background-color: #F6F7FA;
+  border-radius: .3125em;
+  opacity: .5;
+  line-height: 20px;
+}
+
+.inputSearch:focus{
+  border-color: #01C3A7;
+}
+
+.fromStation{
+  background: url(./assets/from.svg);
+  padding: 11px 0 11px 35px;
+  background-repeat: no-repeat;
+  background-position: 11px center;
+}
+
+.toStation{
+  background: url(./assets/to.svg);
+  padding: 11px 0 11px 35px;
+  background-repeat: no-repeat;
+  background-position: 11px center;
+  margin-bottom: 25px;
+}
+
+.dateBegin{
+  background: url(./assets/begin.svg);
+  padding: 11px 0 11px 35px;
+  background-repeat: no-repeat;
+  background-position: 11px center;
+}
+
+.dateEnd{
+  background: url(./assets/end.svg);
+  padding: 11px 0 11px 35px;
+  background-repeat: no-repeat;
+  background-position: 11px center;
+  margin-bottom: 25px;
+}
+
+.passenger{
+  background: url(./assets/human.svg);
+  padding: 11px 0 11px 35px;
+  background-repeat: no-repeat;
+  background-position: 11px center;
+}
+
+.welcome{
+  width: 100%;
+  color: white;
+}
+
+.welcome > h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin:0px;
+}
+
+.welcomeDiv {
+  display: flex;
+  align-items: center;
+}
+
+.cardTexts{
+  margin: 0px;
+}
+
+.welcomeSpan{
+  width: 40px;
+  height: 40px;
+  min-width: 30   px;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+
+.price{
+  background: url(./assets/price.svg);
+  background-repeat: no-repeat;
+  background-position: 2px;
+}
+
+.cardRed{
+  background: url(./assets/payCards.svg);
+  background-repeat: no-repeat;
+  background-position: 2px;
+}
+
+.pay{
+  background: url(./assets/payment.svg);
+  background-repeat: no-repeat;
+  background-position: 2px;
+}
+
+.destinations{
+  display: none;
+}
+
+.stations{
+  border-left: 1px solid rgba(0, 0, 0, .5);
+  border-top: 1px solid rgba(0, 0, 0, .5);
+  border-right: 1px solid rgba(0, 0, 0, .5);
+  border-radius: .3125em;
+}
+
+.station{
+  background: url(./assets/pin.svg) 11px no-repeat;
+  display: block;
+  padding: 12px 35px 11px;
+  color: #323E42;
+  margin: 0px;
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  opacity: .5;
+}
+
+.station:hover{
+  opacity: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+.calendar{
+  display: none;
 }
