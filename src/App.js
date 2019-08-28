@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import InfiniteCalendar from 'react-infinite-calendar';
+import 'react-infinite-calendar/styles.css';
 import './App.css'
 import Stations from './Stations';
 import Navbar from './Navbar';
@@ -8,7 +10,13 @@ import Welcome from './Welcome';
 class App extends Component {
   state = {
     data: [],
-    lastFocus: 'from'
+    lastFocus: 'from',
+    dateBegin: new Date(),
+    dateEnd: '',
+  };
+
+  componentDidMount(){
+    this.setState({dateEnd: new Date(this.state.dateBegin.getFullYear(), this.state.dateBegin.getMonth(), this.state.dateBegin.getDate() + 7).toDateString()})
   }
 
   beginSearch = () =>{
@@ -53,12 +61,14 @@ class App extends Component {
   }
 
   handleFocusFrom = () => {
+    document.querySelector('.calendar').style.display = 'none'
     this.getPopular()
     this.setState({ lastFocus: 'from' })
     this.beginSearch()
   }
 
   handleFocusTo = () => {
+    document.querySelector('.calendar').style.display = 'none'
     const fromStation = document.querySelector('.fromStation')
     this.setState({ lastFocus: 'to' })
     fromStation.value === '' ? this.getPopular() : this.getPopularFrom()
@@ -78,9 +88,38 @@ class App extends Component {
       toStation.value = e.target.innerHTML
       toStation.style.opacity = 1
       this.setState({data: []})
+      document.querySelector('.dateBegin').focus()
     }
-
   }
+
+  openCalendarBegin = () => {
+    document.querySelector('.welcome').style.display = 'none'
+    document.querySelector('.destinations').style.display = 'none'
+    document.querySelector('.calendar').style.display = 'block'
+    this.setState({ calendar : 'begin'})
+  }
+
+  openCalendarEnd = () => {
+    document.querySelector('.welcome').style.display = 'none'
+    document.querySelector('.destinations').style.display = 'none'
+    document.querySelector('.calendar').style.display = 'block'
+    this.setState({ calendar : 'end'})
+  }
+
+  onChange = date => this.setState({ date })
+
+  handleClickDate = (e) => {
+    if(this.state.calendar === 'begin'){
+      this.setState({dateBegin : e})
+      document.querySelector('.dateEnd').focus()
+    } else {
+      this.setState({dateEnd : e.toDateString()})
+      document.querySelector('.passenger').focus()
+      document.querySelector('.calendar').style.display = 'none'
+    }
+  }
+
+
 
   render() {
     return (
@@ -99,9 +138,9 @@ class App extends Component {
 
               <input className='inputSearch fromStation' defaultValue='' onFocus={this.handleFocusFrom} onChange={this.handleSearch}></input>
               <input className='inputSearch toStation' onFocus={this.handleFocusTo} onChange={this.handleSearch}></input>
-              <input className='inputSearch dateBegin'></input>
-              <input className='inputSearch dateEnd'></input>
-              <input className='inputSearch passenger'></input>
+              <input className='inputSearch dateBegin' onFocus={this.openCalendarBegin} value={this.state.dateBegin.toDateString()} ></input>
+              <input className='inputSearch dateEnd' onFocus={this.openCalendarEnd} value={this.state.dateEnd}></input>
+              <input className='inputSearch passenger' defaultValue='Klingon'></input>
             </div>
 
             <div className='card right'>
@@ -113,6 +152,17 @@ class App extends Component {
 
                 <Stations data={this.state.data} handleClick={this.handleClickStation} />
               </div>
+
+              <div className='calendar'>
+                <InfiniteCalendar
+                    width={'100%'}
+                    height={200}
+                    selected={this.state.date}
+                    disabledDays={[0,6]}
+                    onSelect={this.handleClickDate}
+                  />
+              </div>
+
             </div>
           </div>
         </div>
