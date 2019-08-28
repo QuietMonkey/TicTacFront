@@ -1,5 +1,8 @@
+To launch the project, clone the repo, go to the TicTacFront root file, then launch the following command : 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### `npm i && npm start`
 
 ## Available Scripts
 
